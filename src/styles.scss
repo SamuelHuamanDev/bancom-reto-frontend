@@ -38,7 +38,7 @@ $neutral-palette: (
 		500: #8b91a5,
 		600: #63697c,
 		700: #374151,
-		800: #313849,
+		800: #2D3748,
 		900: #111827,
 		contrast: (
 				50: rgba(black, 0.87),
@@ -182,6 +182,10 @@ p {
 	line-height: 1.55;
 }
 
+a {
+	color: #2C5282;
+}
+
 .text-small {
 	font-size: 1rem !important;
 	line-height: 1.5rem !important;
@@ -191,6 +195,11 @@ p {
 	&-unelevated-button.mat-button-primary-subtle {
 		color: mat.get-color-from-palette($primary-pallete, 500) !important;
 		background-color: mat.get-color-from-palette($primary-pallete, 100) !important;
+	}
+
+	&-unelevated-button.mat-accent {
+		color: mat.get-contrast-color-from-palette($neutral-palette, 800) !important;
+		background-color: mat.get-color-from-palette($neutral-palette, 800) !important;
 	}
 
 	&-button.mat-unthemed {

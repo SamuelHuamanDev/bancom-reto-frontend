@@ -6,8 +6,15 @@
 			<a mat-list-item role="listitem" routerLink="/">Careers</a>
 			<a mat-list-item role="listitem" routerLink="/">Help</a>
 		</mat-list>
-		<button mat-flat-button color="primary" class="d-md-none w-100 mb-2">Iniciar sesi&oacute;n</button>
-		<button mat-flat-button class="mat-button-primary-subtle d-md-none w-100">Reg&iacute;strate</button>
+		<a mat-flat-button color="primary" class="d-md-none w-100 mb-2" routerLink="/auth/login" (click)="drawer.toggle()">
+			Iniciar sesi&oacute;n
+		</a>
+		<a mat-flat-button
+		   class="mat-button-primary-subtle d-md-none w-100"
+		   routerLink="/auth/login"
+		   (click)="drawer.toggle()">
+			Reg&iacute;strate
+		</a>
 	</mat-drawer>
 	<app-header (menuClick)="drawer.toggle()"></app-header>
 	<router-outlet></router-outlet>

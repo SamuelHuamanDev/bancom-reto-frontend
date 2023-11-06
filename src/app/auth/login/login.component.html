@@ -1,0 +1,41 @@
+<section class="w-100 d-md-flex flex-md-row overflow-hidden">
+	<div class="w-50 d-none d-md-inline-block">
+		<img ngSrc="assets/img/login.png" alt="" class="w-100 object-fit-cover" height="900" width="720">
+	</div>
+	<div class="w-50">
+		<div class="container">
+			<div class="row">
+				<div class="col d-flex align-items-md-center justify-content-md-center text-start">
+					<div class="w-75">
+						<p class="mb-1">Bienvenido</p>
+						<h4 class="mb-3">Inicia sesión</h4>
+						<form novalidate class="d-flex flex-column">
+							<mat-form-field class="w-100" appearance="outline" color="primary">
+								<mat-label>Correo electr&oacute;nico</mat-label>
+								<input matInput type="email" placeholder="Correo electr&oacute;nico">
+							</mat-form-field>
+							<mat-form-field class="w-100" appearance="outline" color="primary">
+								<mat-label>Contrase&ntilde;a</mat-label>
+								<input matInput placeholder="Contrase&ntilde;a" [type]="hidePassword ? 'password' : 'text'">
+								<button matSuffix type="button" mat-icon-button aria-label="Ver" (click)="hidePassword = !hidePassword">
+									<mat-icon *ngIf="hidePassword">visibility</mat-icon>
+									<mat-icon *ngIf="!hidePassword">visibility_off</mat-icon>
+								</button>
+								<mat-hint [align]="'end'">
+									<a routerLink="/" class="text-decoration-none small">¿Olvidaste tu contraseña?</a>
+								</mat-hint>
+							</mat-form-field>
+							<mat-checkbox color="primary" class="w-100 mt-3">Recordar correo</mat-checkbox>
+							<div class="d-grid w-100 mt-auto mt-md-5">
+								<button mat-flat-button type="submit" color="primary" class="mat-button-lg">Ingresar</button>
+								<button mat-flat-button type="button" color="accent" class="mat-button-lg mt-3">
+									<img src="assets/img/google.png" alt="" class="me-2">Ingresar con Google
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
