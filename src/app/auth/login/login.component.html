@@ -9,23 +9,33 @@
 					<div class="w-75">
 						<p class="mb-1">Bienvenido</p>
 						<h4 class="mb-3">Inicia sesión</h4>
-						<form novalidate class="d-flex flex-column">
-							<mat-form-field class="w-100" appearance="outline" color="primary">
+						<form novalidate class="d-flex flex-column" [formGroup]="form" (ngSubmit)="doLogin()">
+							<mat-form-field class="w-100" appearance="outline" color="primary" [hideRequiredMarker]="true">
 								<mat-label>Correo electr&oacute;nico</mat-label>
-								<input matInput type="email" placeholder="Correo electr&oacute;nico">
+								<input matInput type="email" placeholder="Correo electr&oacute;nico" formControlName="username">
+								<mat-error *ngIf="username.errors && username.getError('required')">
+									La direcci&oacute;n de correo es obligatoria
+								</mat-error>
+								<mat-error *ngIf="username.errors && username.getError('email')">
+									Debes ingresar una direcci&oacute;n de correo v&aacute;lida
+								</mat-error>
 							</mat-form-field>
-							<mat-form-field class="w-100" appearance="outline" color="primary">
+							<mat-form-field class="w-100" appearance="outline" color="primary" [hideRequiredMarker]="true">
 								<mat-label>Contrase&ntilde;a</mat-label>
-								<input matInput placeholder="Contrase&ntilde;a" [type]="hidePassword ? 'password' : 'text'">
+								<input matInput
+								       placeholder="Contrase&ntilde;a"
+								       formControlName="password"
+								       [type]="hidePassword ? 'password' : 'text'">
 								<button matSuffix type="button" mat-icon-button aria-label="Ver" (click)="hidePassword = !hidePassword">
 									<mat-icon *ngIf="hidePassword">visibility</mat-icon>
 									<mat-icon *ngIf="!hidePassword">visibility_off</mat-icon>
 								</button>
-								<mat-hint [align]="'end'">
-									<a routerLink="/" class="text-decoration-none small">¿Olvidaste tu contraseña?</a>
-								</mat-hint>
+								<mat-error *ngIf="password.errors && password.getError('required')">
+									La contrase&ntilde;a es obligatoria
+								</mat-error>
 							</mat-form-field>
-							<mat-checkbox color="primary" class="w-100 mt-3">Recordar correo</mat-checkbox>
+							<a routerLink="/" class="text-decoration-none text-end small">¿Olvidaste tu contraseña?</a>
+							<mat-checkbox color="primary" class="w-100 mt-1">Recordar correo</mat-checkbox>
 							<div class="d-grid w-100 mt-auto mt-md-5">
 								<button mat-flat-button type="submit" color="primary" class="mat-button-lg">Ingresar</button>
 								<button mat-flat-button type="button" color="accent" class="mat-button-lg mt-3">

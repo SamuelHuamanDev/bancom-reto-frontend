@@ -12,6 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
 		MatButtonModule,
 		MatIconModule,
 		MatSidenavModule,
-		MatListModule
+		MatListModule,
+		MatSnackBarModule
 	],
 	providers: [],
 	bootstrap: [ AppComponent ]
