@@ -1,0 +1,32 @@
+section.container {
+	margin-top: 64px;
+
+	.mat-mdc-table {
+		.mat-mdc-header-cell {
+			background-color: #808692 !important;
+			color: white !important;
+		}
+
+		.mat-mdc-row.custom-row {
+			&:nth-child(4n+1) {
+				background-color: white !important;
+			}
+
+			&:nth-child(4n+3) {
+				background-color: #f9fafc !important;
+			}
+		}
+
+		.custom-row td {
+			border-bottom-width: 0;
+		}
+
+		tr.user-detail {
+			height: 0;
+
+			h6.small {
+				margin-bottom: .88rem;
+			}
+		}
+	}
+}

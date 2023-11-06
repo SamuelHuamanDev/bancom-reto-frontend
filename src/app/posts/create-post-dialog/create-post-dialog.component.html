@@ -1,0 +1,22 @@
+<h5 mat-dialog-title class="fs-4 fw-semibold">Crear post</h5>
+<form novalidate class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+	<div mat-dialog-content>
+		<mat-form-field class="w-100" appearance="outline" color="primary" [hideRequiredMarker]="true">
+			<mat-label>T&iacute;tulo</mat-label>
+			<input matInput placeholder="T&iacute;tulo" formControlName="title">
+			<mat-error *ngIf="title.errors && title.getError('required')">
+				El t&iacute;tulo es obligatorio
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field class="w-100" appearance="outline" color="primary" [hideRequiredMarker]="true">
+			<mat-label>Descripci&oacute;n</mat-label>
+			<input matInput placeholder="Descripci&oacute;n" formControlName="description">
+			<mat-error *ngIf="title.errors && title.getError('required')">
+				La descripci&oacute;n es obligatoria
+			</mat-error>
+		</mat-form-field>
+	</div>
+	<div mat-dialog-actions class="justify-content-center">
+		<button mat-flat-button type="submit" color="primary" class="mx-auto mb-3 mb-lg-4">Guardar</button>
+	</div>
+</form>

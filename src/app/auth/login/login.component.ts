@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -30,7 +30,7 @@ export class LoginComponent {
 		if (this.form.valid) {
 			const isLoggedIn = this.authService.login(this.username.value, this.password.value);
 			if (isLoggedIn)
-				this.router.navigate([ '/' ]);
+				this.router.navigate([ '/posts' ]);
 			else
 				this._snackbar.open('Credenciales incorrectas', '', {
 					duration: 5000

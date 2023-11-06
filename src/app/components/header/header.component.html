@@ -21,9 +21,10 @@
 				</div>
 			</div>
 			<div class="col-auto d-none d-md-inline-block align-self-center">
-				<a mat-flat-button color="primary" routerLink="/auth/login">Iniciar sesi&oacute;n</a>
+				<a mat-flat-button color="primary" routerLink="/auth/login" *ngIf="!authService.isSessionActive()">Iniciar sesi&oacute;n</a>
+				<a mat-flat-button color="primary" routerLink="/posts" *ngIf="authService.isSessionActive()">Dashboard</a>
 			</div>
-			<div class="col-auto d-none d-md-inline-block align-self-center">
+			<div class="col-auto d-none d-md-inline-block align-self-center" *ngIf="!authService.isSessionActive()">
 				<a mat-flat-button class="mat-button-primary-subtle" routerLink="/auth/login">Reg&iacute;strate</a>
 			</div>
 			<div class="col-auto d-lg-none">

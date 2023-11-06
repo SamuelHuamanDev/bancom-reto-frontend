@@ -1,4 +1,5 @@
 import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
 	selector: 'app-header',
@@ -9,6 +10,9 @@ export class HeaderComponent {
 	@Output() menuClick = new EventEmitter<void>();
 
 	isScrolled = false;
+
+	constructor(public authService: AuthService) {
+	}
 
 	onMenuClick() {
 		this.menuClick.emit();

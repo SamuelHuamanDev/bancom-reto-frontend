@@ -22,8 +22,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule,
 		BrowserAnimationsModule,
+		AppRoutingModule,
 		HttpClientModule,
 		MatToolbarModule,
 		MatButtonModule,
