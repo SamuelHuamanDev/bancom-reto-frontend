@@ -1,0 +1,12 @@
+footer {
+	padding: 2.5rem 0;
+
+	@media (min-width: 768px) {
+		padding: 4rem 0;
+
+	}
+
+	img.logo {
+		width: 2rem;
+	}
+}

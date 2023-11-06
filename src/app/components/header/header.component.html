@@ -1,0 +1,36 @@
+<mat-toolbar class="position-fixed" [class.scrolled]="isScrolled">
+	<div class="container">
+		<div class="row">
+			<div class="col align-self-center align-self-lg-baseline">
+				<div class="row">
+					<div class="col col-lg-auto me-lg-4 align-self-lg-baseline">
+						<a routerLink="/"><img src="assets/img/logo.svg" alt="Landify"></a>
+					</div>
+					<div class="col-auto d-none d-lg-inline-block align-self-center">
+						<button mat-button>Features</button>
+					</div>
+					<div class="col-auto d-none d-lg-inline-block align-self-center">
+						<button mat-button>Pricing</button>
+					</div>
+					<div class="col-auto d-none d-lg-inline-block align-self-center">
+						<button mat-button>Careers</button>
+					</div>
+					<div class="col-auto d-none d-lg-inline-block align-self-center">
+						<button mat-button>Help</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-auto d-none d-md-inline-block align-self-center">
+				<button mat-flat-button color="primary">Iniciar sesi&oacute;n</button>
+			</div>
+			<div class="col-auto d-none d-md-inline-block align-self-center">
+				<button mat-flat-button class="mat-button-primary-subtle">Reg&iacute;strate</button>
+			</div>
+			<div class="col-auto d-lg-none">
+				<button mat-icon-button type="button" (click)="onMenuClick()">
+					<mat-icon>menu</mat-icon>
+				</button>
+			</div>
+		</div>
+	</div>
+</mat-toolbar>

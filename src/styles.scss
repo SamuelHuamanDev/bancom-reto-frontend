@@ -1,1 +1,221 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@include mat.core();
+
+$primary-pallete: (
+		50: #f1e9fd,
+		100: #ede9fe,
+		200: #c1a3f7,
+		300: #a77bf5,
+		400: #925bf1,
+		500: #7c3aed,
+		600: #7035e6,
+		700: #602cdd,
+		800: #5025d7,
+		900: #3213ce,
+		contrast: (
+				50: rgba(black, 0.87),
+				100: rgba(black, 0.87),
+				200: rgba(black, 0.87),
+				300: white,
+				400: white,
+				500: white,
+				600: white,
+				700: white,
+				800: white,
+				900: white
+		)
+);
+
+$neutral-palette: (
+		50: #f1f8ff,
+		100: #eaf0ff,
+		200: #e0e6fc,
+		300: #cfd6eb,
+		400: #abb2c6,
+		500: #8b91a5,
+		600: #63697c,
+		700: #374151,
+		800: #313849,
+		900: #111827,
+		contrast: (
+				50: rgba(black, 0.87),
+				100: rgba(black, 0.87),
+				200: rgba(black, 0.87),
+				300: white,
+				400: white,
+				500: white,
+				600: white,
+				700: white,
+				800: white,
+				900: white
+		)
+);
+
+$test-primary: mat.define-palette($primary-pallete, 500);
+$test-neutral: mat.define-palette($neutral-palette, 900);
+
+$test-button-level: mat.define-typography-level(
+		$font-family: 'Inter, sans-serif',
+		$font-weight: 600,
+		$font-size: .875rem,
+		$line-height: 1.25rem
+);
+
+$test-typography: mat.define-typography-config(
+		$font-family: 'Inter, sans-serif',
+		$button: $test-button-level
+);
+
+$test-theme: mat.define-light-theme((
+		color: (
+				primary: $test-primary,
+				accent: $test-neutral
+		),
+		typography: $test-typography
+));
+
+@include mat.all-component-themes($test-theme);
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+
+@import "bootstrap/scss/helpers";
+
+@import "bootstrap/scss/utilities/api";
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: white;
+	color: #111827;
+	margin: 0;
+	font-family: Inter, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+	color: mat.get-color-from-palette($neutral-palette, 900) !important;
+	font-size: 2.25rem;
+	font-weight: 700;
+	line-height: 1.25;
+	letter-spacing: -0.05rem;
+	margin-bottom: 1rem;
+
+	@media (min-width: 768px) {
+		font-size: 3rem;
+		letter-spacing: -0.08rem;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 3.7rem;
+		letter-spacing: -0.09rem;
+	}
+}
+
+h2 {
+	color: mat.get-color-from-palette($neutral-palette, 900) !important;
+	font-size: 1.875rem;
+	font-weight: 700;
+	line-height: 1.25;
+	letter-spacing: -0.05rem;
+
+	@media (min-width: 768px) {
+		font-size: 2.25rem;
+		letter-spacing: -0.08rem;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 3rem;
+		letter-spacing: -0.075rem;
+	}
+}
+
+h3 {
+	color: mat.get-color-from-palette($neutral-palette, 900) !important;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.33;
+	letter-spacing: -0.05625rem;
+
+	@media (min-width: 768px) {
+		font-size: 1.875rem;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 2.25rem;
+	}
+}
+
+h4 {
+	color: mat.get-color-from-palette($neutral-palette, 900) !important;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.33;
+
+	@media (min-width: 768px) {
+		font-size: 1.5rem;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 1.875rem;
+	}
+}
+
+p {
+	color: mat.get-color-from-palette($neutral-palette, 700) !important;
+	font-size: 1.125rem;
+	line-height: 1.55;
+}
+
+.text-small {
+	font-size: 1rem !important;
+	line-height: 1.5rem !important;
+}
+
+.mat-mdc {
+	&-unelevated-button.mat-button-primary-subtle {
+		color: mat.get-color-from-palette($primary-pallete, 500) !important;
+		background-color: mat.get-color-from-palette($primary-pallete, 100) !important;
+	}
+
+	&-button.mat-unthemed {
+		color: #111827 !important;
+	}
+}
+
+.mdc-button {
+	height: fit-content !important;
+	font-weight: 600 !important;
+	line-height: 1.25rem !important;
+	padding: .63rem 1rem !important;
+	border-radius: 0.5rem !important;
+
+	@media (min-width: 992px) {
+		font-size: 1rem !important;
+		padding: .75rem 1.25rem !important;
+	}
+
+	&.mat-button-lg {
+		font-size: 1rem !important;
+		padding: 1rem 1.5rem !important;
+	}
+}
+
+.mat-icon svg {
+	vertical-align: top !important;
+}

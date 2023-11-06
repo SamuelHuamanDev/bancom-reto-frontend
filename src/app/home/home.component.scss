@@ -1,0 +1,67 @@
+section.w-100 {
+	min-height: calc(100vh + 64px);
+	background-image: url("../../assets/img/Background-mobile.png") !important;
+	background-size: cover;
+	background-position: bottom;
+
+	@media (min-width: 768px) {
+		background-image: url("../../assets/img/Background-tablet.png") !important;
+	}
+
+	@media (min-width: 992px) {
+		background-image: url("../../assets/img/Background.png") !important;
+	}
+
+	.container {
+		padding-top: 64px;
+
+		.banner-title {
+			padding-top: 2.5rem;
+			padding-right: .75rem;
+
+			@media (min-width: 768px) {
+				padding-top: 5rem;
+				padding-right: 1rem;
+			}
+
+			@media (min-width: 992px) {
+				padding-top: 6rem;
+				padding-right: 3rem;
+			}
+		}
+
+		.mobile-img {
+			max-height: 40rem;
+			margin-top: 5rem;
+
+			@media (min-width: 992px) {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+.second-container {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	@media (min-width: 768px) {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+
+	@media (min-width: 992px) {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+}
+
+.third-container {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	@media (min-width: 768px) {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+}
