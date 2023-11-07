@@ -28,8 +28,8 @@ export class AuthService {
 		const currentTime = Date.now();
 		const elapsedTime = currentTime - sessionStartTime;
 
-		if (elapsedTime < (this.sessionDurationInMinutes * 60 * 1000)) {
-			const remainingTime = (this.sessionDurationInMinutes * 60 * 1000) - elapsedTime;
+		if (elapsedTime < this.sessionDurationInMinutes * 60 * 1000) {
+			const remainingTime = this.sessionDurationInMinutes * 60 * 1000 - elapsedTime;
 			setTimeout(() => this.endSession(), remainingTime);
 		} else {
 			this.endSession();
