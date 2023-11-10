@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageConstants } from '../../shared/constants/local-storage.constants';
+import { Router } from '@angular/router';
 
 const CREDENTIALS: any[] = [
 	{ username: 'test@mail.com', password: 't3$T' }
@@ -11,7 +12,7 @@ const CREDENTIALS: any[] = [
 export class AuthService {
 	private sessionDurationInMinutes: number = 15;
 
-	constructor() {
+	constructor(private router: Router) {
 	}
 
 	login(username: string, password: string): boolean {
@@ -38,6 +39,9 @@ export class AuthService {
 
 	endSession(): void {
 		localStorage.removeItem(LocalStorageConstants.IS_LOGGED_IN);
+		const currentRouteConfig = this.router.config.find(r => r.path === this.router.url.substring(1));
+		if (currentRouteConfig && currentRouteConfig.canActivate)
+			this.router.navigate([ '/auth/login' ]);
 	}
 
 	isSessionActive(): boolean {
